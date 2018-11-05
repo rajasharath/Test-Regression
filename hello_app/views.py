@@ -1,5 +1,6 @@
 from datetime import datetime
 from flask import Flask, render_template
+from pd import panda
 from . import app
 
 @app.route("/")
@@ -26,8 +27,7 @@ def hello_there(name):
 def get_data():
     return app.send_static_file("data.json")
 
-@app.route("/api/regression")
-import pandas as pd
+@app.route("/api/readcsvcolumns")
 def get_data():
 xlsx = pd.ExcelFile('Asinex_2D_K-means_50 Clustering.xlsx',sheetname='Asinex_2D_K-means Clustering')
 return xlsx.columns
