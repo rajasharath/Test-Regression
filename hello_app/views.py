@@ -28,6 +28,6 @@ def get_data():
     return app.send_static_file("data.json")
 
 @app.route("/api/readcsvcolumns")
-def readcsvcolumns():
+def readcsvcolumns(): 
 xlsx = pd.ExcelFile('Asinex_2D_K-means_50 Clustering.xlsx',sheetname='Asinex_2D_K-means Clustering')
 return xlsx.columns
