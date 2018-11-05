@@ -1,6 +1,6 @@
 from datetime import datetime
 from flask import Flask, render_template
-from pd import panda
+from pd import pandas
 from . import app
 
 @app.route("/")
@@ -28,6 +28,6 @@ def get_data():
     return app.send_static_file("data.json")
 
 @app.route("/api/readcsvcolumns")
-def get_data():
+def readcsvcolumns():
 xlsx = pd.ExcelFile('Asinex_2D_K-means_50 Clustering.xlsx',sheetname='Asinex_2D_K-means Clustering')
 return xlsx.columns
