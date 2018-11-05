@@ -25,3 +25,9 @@ def hello_there(name):
 @app.route("/api/data")
 def get_data():
     return app.send_static_file("data.json")
+
+@app.route("/api/regression")
+import pandas as pd
+def get_data():
+xlsx = pd.ExcelFile('Asinex_2D_K-means_50 Clustering.xlsx',sheetname='Asinex_2D_K-means Clustering')
+return xlsx.columns
